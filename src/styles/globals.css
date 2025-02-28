@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #E7E0E0;
+  --foreground: #171717;
+}
+
+@font-face {
+  font-family: 'Arboria-Book';
+  src: url('/fonts/Arboria-Book.woff2') format('woff2'),
+       url('/fonts/Arboria-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #E7E0E0;
+  }
+}
+
+/* Custom Font Import */
+@font-face {
+  font-family: "Arboria-Book";
+  src: url("/fonts/Arboria-Book.woff") format("woff2"),
+       url("/fonts/Arboria-Book.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Arboria-Black";
+  src: url("/fonts/arboria-black.woff") format("woff2"),
+       url("/fonts/arboria-black.woff2") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anton-Regular";
+  src: url("/fonts/Anton-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* Apply the Font */
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Arboria-Book", Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+  .custom-scrollbar {
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px; /* Add height for horizontal scrollbar */
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 4px;
+    }
+  
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.6);
+    }
+  
+    &::-webkit-scrollbar-corner {
+      background: transparent;
+    }
+  
+    /* Show horizontal scrollbar */
+    &::-webkit-scrollbar:horizontal {
+      display: block;
+    }
+  
+    /* Make table header sticky */
+    thead {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: #1D8E42;
+    }
+  
+    /* Prevent header text from wrapping */
+    th {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  
+    /* Cell text overflow handling */
+    td {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

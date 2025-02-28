@@ -1,0 +1,17 @@
+[
+  {
+    "label": "Total Accepted RSVP",
+    "value": 531,
+    "total": 864
+  },
+  {
+    "label": "Total Checked-in Guest",
+    "value": 122,
+    "total": 864
+  },
+  {
+    "label": "Total Declined/Food",
+    "value": 112,
+    "total": 864
+  }
+]
